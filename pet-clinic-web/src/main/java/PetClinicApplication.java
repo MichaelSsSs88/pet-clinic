@@ -1,5 +1,3 @@
-package dev.michaelssss88.petclinic;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
