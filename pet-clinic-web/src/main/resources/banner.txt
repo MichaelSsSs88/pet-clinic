@@ -1,0 +1,15 @@
+   .oooooo..o                      o8o                              oooooooooooo                                                                                    oooo
+  d8P'    `Y8                      `"'                              `888'     `8                                                                                    `888
+  Y88bo.      oo.ooooo.  oooo d8b oooo  ooo. .oo.    .oooooooo       888         oooo d8b  .oooo.   ooo. .oo.  .oo.    .ooooo.  oooo oooo    ooo  .ooooo.  oooo d8b  888  oooo
+   `"Y8888o.   888' `88b `888""8P `888  `888P"Y88b  888' `88b        888oooo8    `888""8P `P  )88b  `888P"Y88bP"Y88b  d88' `88b  `88. `88.  .8'  d88' `88b `888""8P  888 .8P'
+       `"Y88b  888   888  888      888   888   888  888   888        888    "     888      .oP"888   888   888   888  888ooo888   `88..]88..8'   888   888  888      888888.
+  oo     .d8P  888   888  888      888   888   888  `88bod8P'        888          888     d8(  888   888   888   888  888    .o    `888'`888'    888   888  888      888 `88b.
+  8""88888P'   888bod8P' d888b    o888o o888o o888o `8oooooo.       o888o        d888b    `Y888""8o o888o o888o o888o `Y8bod8P'     `8'  `8'     `Y8bod8P' d888b    o888o o888o
+               888                                  d"     YD
+              o888o   ooo        ooooo  o8o         "Y8ooooP'                          oooo   .oooooo..o           .oooooo..o           .ooooo.    .ooooo.
+                      `88.       .888'  `"'            `888                            `888  d8P'    `Y8          d8P'    `Y8          d88'   `8. d88'   `8.
+                       888b     d'888  oooo   .ooooo.   888 .oo.    .oooo.    .ooooo.   888  Y88bo.       .oooo.o Y88bo.       .oooo.o Y88..  .8' Y88..  .8'
+                       8 Y88. .P  888  `888  d88' `"Y8  888P"Y88b  `P  )88b  d88' `88b  888   `"Y8888o.  d88(  "8  `"Y8888o.  d88(  "8  `88888b.   `88888b.
+                       8  `888'   888   888  888        888   888   .oP"888  888ooo888  888       `"Y88b `"Y88b.       `"Y88b `"Y88b.  .8'  ``88b .8'  ``88b
+                       8    Y     888   888  888   .o8  888   888  d8(  888  888    .o  888  oo     .d8P o.  )88b oo     .d8P o.  )88b `8.   .88P `8.   .88P
+                      o8o        o888o o888o `Y8bod8P' o888o o888o `Y888""8o `Y8bod8P' o888o 8""88888P'  8""888P' 8""88888P'  8""888P'  `boood8'   `boood8'
