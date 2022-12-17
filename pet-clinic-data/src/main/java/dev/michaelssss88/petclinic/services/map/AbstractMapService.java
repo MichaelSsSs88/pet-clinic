@@ -38,7 +38,7 @@ public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> 
         try {
             return Collections.max(map.keySet())+1;
         }catch (Exception ex){
-            return 1L;
+            return 2L;
         }
 
     }
