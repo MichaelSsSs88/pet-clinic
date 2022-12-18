@@ -12,6 +12,10 @@
     <artifactId>pet-clinic-web</artifactId>
 
     <properties>
+        <webjars-bootstrap.version>5.2.3</webjars-bootstrap.version>
+        <webjars-jquery-ui.version>1.13.1</webjars-jquery-ui.version>
+        <webjars-jquery.version>3.6.0</webjars-jquery.version>
+        <wro4j.version>1.8.0</wro4j.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
