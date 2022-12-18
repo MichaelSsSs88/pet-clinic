@@ -4,13 +4,14 @@ import dev.michaelssss88.petclinic.models.Owner;
 import dev.michaelssss88.petclinic.models.Vet;
 import dev.michaelssss88.petclinic.services.OwnerService;
 import dev.michaelssss88.petclinic.services.VetService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
 public class DataLoader  implements CommandLineRunner {
-
     private final OwnerService ownerService;
+
     private final VetService vetService;
 
     public DataLoader(OwnerService ownerService, VetService vetService) {

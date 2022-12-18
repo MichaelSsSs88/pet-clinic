@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class VetController {
 
+
     private final VetService vetService;
 
     public VetController(VetService vetService) {
