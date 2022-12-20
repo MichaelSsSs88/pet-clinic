@@ -1,4 +1,4 @@
-package dev.michaelssss88;
+package dev.michaelssss88.petclinic;
 
 
 
