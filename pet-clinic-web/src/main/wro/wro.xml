@@ -1,6 +1,6 @@
 <groups xmlns="http://www.isdc.ro/wro" >
   <group name="petclinic">
     <css>classpath:META-INF/resources/webjars/bootstrap/5.2.3/less/bootstrap.less</css>
-    <css>/pet-clinic.less</css>
+    <css>/petclinic.less</css>
    </group>
 </groups>
