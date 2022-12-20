@@ -1,13 +1,15 @@
 package dev.michaelssss88.petclinic.models;
 
-public class Owner extends Person{
-    private Long id;
+import java.util.Set;
 
-    public Long getId() {
-        return this.id;
+public class Owner extends Person{
+    private Set<Pet> pets;
+
+    public Set<Pet> getPets() {
+        return pets;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setPets(Set<Pet> pets) {
+        this.pets = pets;
     }
 }
