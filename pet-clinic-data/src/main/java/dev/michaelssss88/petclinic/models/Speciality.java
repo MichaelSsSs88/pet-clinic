@@ -1,9 +1,7 @@
 package dev.michaelssss88.petclinic.models;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "specialities")

@@ -1,9 +1,7 @@
 package dev.michaelssss88.petclinic.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.ManyToOne;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
@@ -18,7 +16,7 @@ public class Pet extends BaseEntity{
 
     @ManyToOne
     @JoinColumn(name = "type_id")
-    private PetType petType;
+    private Type type;
 
     @ManyToOne
     @JoinColumn(name = "owner_id")
@@ -29,12 +27,12 @@ public class Pet extends BaseEntity{
 
     @Column(name = "birth_date")
     private LocalDate birthDate;
-    public PetType getPetType() {
-        return petType;
+    public Type getPetType() {
+        return type;
     }
 
-    public void setPetType(PetType petType) {
-        this.petType = petType;
+    public void setPetType(Type type) {
+        this.type = type;
     }
 
     public Owner getOwner() {

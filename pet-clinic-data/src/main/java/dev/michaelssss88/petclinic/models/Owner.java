@@ -1,7 +1,7 @@
 package dev.michaelssss88.petclinic.models;
 
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 

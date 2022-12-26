@@ -1,9 +1,6 @@
 package dev.michaelssss88.petclinic.models;
 
-import jakarta.persistence.Column;
-
-import javax.persistence.Entity;
-import javax.persistence.MappedSuperclass;
+import jakarta.persistence.*;
 
 @MappedSuperclass
 public class Person extends BaseEntity{

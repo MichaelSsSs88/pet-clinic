@@ -1,11 +1,6 @@
 package dev.michaelssss88.petclinic.models;
 
-import jakarta.persistence.ManyToOne;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.Table;
+import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
