@@ -2,11 +2,13 @@ package dev.michaelssss88.petclinic.services.map;
 
 import dev.michaelssss88.petclinic.models.Type;
 import dev.michaelssss88.petclinic.services.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class PetTypeServiceMap extends AbstractMapService<Type, Long> implements PetTypeService {
     @Override
     public Set<Type> findAll() {
