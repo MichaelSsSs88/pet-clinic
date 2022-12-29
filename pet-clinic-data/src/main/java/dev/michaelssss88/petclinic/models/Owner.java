@@ -2,9 +2,16 @@ package dev.michaelssss88.petclinic.models;
 
 
 import jakarta.persistence.*;
+import lombok.*;
+
 import java.util.HashSet;
 import java.util.Set;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "owners")
 public class Owner extends Person{
@@ -21,7 +28,7 @@ public class Owner extends Person{
     @Column(name = "telephone")
     private String telephone;
 
-    public String getAddress() {
+   /* public String getAddress() {
         return address;
     }
 
@@ -54,5 +61,5 @@ public class Owner extends Person{
 
     public void setPets(Set<Pet> pets) {
         this.pets = pets;
-    }
+    }*/
 }

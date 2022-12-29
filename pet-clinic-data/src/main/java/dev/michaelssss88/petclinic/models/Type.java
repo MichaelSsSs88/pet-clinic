@@ -1,9 +1,15 @@
 package dev.michaelssss88.petclinic.models;
 
 import jakarta.persistence.*;
+import lombok.*;
+
 import java.util.HashSet;
 import java.util.Set;
-
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "types")
 public class Type extends BaseEntity{
@@ -13,11 +19,11 @@ public class Type extends BaseEntity{
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "type")
     private Set<Pet> pets = new HashSet<>();
 
-    public String getName() {
+  /*  public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
-    }
+    }*/
 }

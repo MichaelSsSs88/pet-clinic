@@ -1,8 +1,14 @@
 package dev.michaelssss88.petclinic.models;
 
 import jakarta.persistence.*;
-import java.time.LocalDate;
+import lombok.*;
 
+import java.time.LocalDate;
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "visits")
 public class Visit extends BaseEntity {
@@ -21,7 +27,7 @@ public class Visit extends BaseEntity {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    /*public void setDate(LocalDate date) {
         this.date = date;
     }
 
@@ -39,5 +45,5 @@ public class Visit extends BaseEntity {
 
     public void setPet(Pet pet) {
         this.pet = pet;
-    }
+    }*/
 }

@@ -8,9 +8,8 @@ import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-
+//@ComponentScan(basePackages ="dev.michaelssss88.petclinic.services")
 @SpringBootApplication
-//@ComponentScan(basePackages = "dev.michaelssss88.petclinic.models")
 //@EntityScan(basePackages = "dev.michaelssss88.petclinic.models")
 //@EnableJpaRepositories(basePackages = "dev.michaelssss88.petclinic.repositories")
 public class PetClinicApplication {

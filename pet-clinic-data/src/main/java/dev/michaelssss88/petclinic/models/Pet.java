@@ -2,10 +2,16 @@ package dev.michaelssss88.petclinic.models;
 
 
 import jakarta.persistence.*;
+import lombok.*;
+
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
-
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "pets")
 public class Pet extends BaseEntity{
