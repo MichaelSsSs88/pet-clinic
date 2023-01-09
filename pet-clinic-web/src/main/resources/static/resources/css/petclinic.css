@@ -161,6 +161,11 @@ strong {
   -o-transition: border 0.15s;
   -ms-transition: border 0.15s;
 }
+
+.btn-default{
+  background-color: lightgray;
+}
+
 .btn-default:hover,
 .btn-default:focus,
 .btn-default:active,

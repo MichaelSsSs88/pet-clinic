@@ -16,6 +16,11 @@ public class Type extends BaseEntity{
     @Column(name = "name")
     private String name;
 
+    @Override
+    public String toString() {
+        return name;
+    }
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "type")
     private Set<Pet> pets = new HashSet<>();
 
