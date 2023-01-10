@@ -5,12 +5,15 @@ import dev.michaelssss88.petclinic.services.OwnerService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
+import java.util.Map;
 
 @RequestMapping("/owners")
 @Controller
@@ -34,6 +37,46 @@ public class OwnerController {
        mav.addObject(ownerService.findById(ownerId));
        return  mav;
     }
+
+    @GetMapping("/new")
+    public String initCreationForm(Map<String, Object> model){
+        Owner owner = new Owner();
+        model.put("owner",owner);
+        return "owners/createOrUpdateOwnerForm";
+    }
+
+    @PostMapping("/new")
+    public String processCreationForm(@Validated Owner owner, BindingResult result){
+        if(result.hasErrors()){
+            return "owners/createOrUpdateOwnerForm";
+        }else{
+            this.ownerService.save(owner);
+            return "redirect:/owners/" + owner.getId();
+        }
+    }
+
+    @GetMapping("/{ownerId}/edit")
+    public String initUpdateForm(@PathVariable("ownerId") Long ownerId, Model model){
+        System.out.println(ownerId);
+        Owner owner = this.ownerService.findById(ownerId);
+        System.out.println(owner);
+        model.addAttribute(owner);
+        return "owners/createOrUpdateOwnerForm";
+    }
+
+    @PostMapping("/{ownerId}/edit")
+    public String processUpdateForm(@Validated Owner owner, BindingResult result, @PathVariable("ownerId") Long ownerId){
+        if(result.hasErrors()){
+            return "owners/createOrUpdateOwnerForm";
+        }else{
+            this.ownerService.save(owner);
+            return "redirect:/owners/" + owner.getId();
+        }
+    }
+
+
+
+
 
     @RequestMapping("/find")
     public String findOwner(Model model){
