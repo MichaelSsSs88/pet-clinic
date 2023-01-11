@@ -25,7 +25,7 @@ public class OwnerController {
         this.ownerService = ownerService;
     }
 
-    @GetMapping({"/index", "/index.html"})
+    @GetMapping({"/","/index", "/index.html"})
     public String index(Model model){
         model.addAttribute("owners",ownerService.findAll());
         return "owners/index";
@@ -93,7 +93,7 @@ public class OwnerController {
 
         // find owners by last name
         List<Owner> results = ownerService.findAllByLastNameLike("%"+ owner.getLastName() + "%");
-
+        System.out.println(results.size());
         if (results.isEmpty()) {
             // no owners found
             result.rejectValue("lastName", "notFound", "not found");

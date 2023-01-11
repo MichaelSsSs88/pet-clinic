@@ -40,13 +40,8 @@ class VetControllerTest {
         Set<Vet> vets= new HashSet<>();
         vets.add(new Vet());
         vets.add(new Vet());
-
         when(vetService.findAll()).thenReturn(vets);
-
         ArgumentCaptor<Set<Vet>> argumentCaptor= ArgumentCaptor.forClass(Set.class);
-
-
-
         String viewName=controller.index(model);
         assertEquals("vets/index", viewName);
         verify(vetService, times(1)).findAll();
