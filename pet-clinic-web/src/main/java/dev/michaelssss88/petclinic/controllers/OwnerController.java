@@ -1,20 +1,30 @@
 package dev.michaelssss88.petclinic.controllers;
 
+import ch.qos.logback.core.model.processor.ModelHandlerException;
+import dev.michaelssss88.petclinic.exceptions.NotFoundException;
 import dev.michaelssss88.petclinic.models.Owner;
 import dev.michaelssss88.petclinic.services.OwnerService;
+import jakarta.validation.Valid;
+import jakarta.ws.rs.InternalServerErrorException;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.ModelAndViewDefiningException;
+import org.thymeleaf.exceptions.TemplateInputException;
+import org.thymeleaf.exceptions.TemplateProcessingException;
 
+import java.text.ParseException;
 import java.util.List;
 import java.util.Map;
 
+@Slf4j
 @RequestMapping("/owners")
 @Controller
 public class OwnerController {
@@ -33,9 +43,16 @@ public class OwnerController {
 
     @GetMapping("/{ownerId}")
     public ModelAndView showOwner(@PathVariable("ownerId") Long ownerId){
-       ModelAndView mav = new ModelAndView("owners/ownerDetails");
-       mav.addObject(ownerService.findById(ownerId));
-       return  mav;
+        try {   ModelAndView mav=null;
+            // log.debug("Deleting id: " + ownerId);
+            mav= new ModelAndView("owners/ownerDetails");
+            mav.addObject(ownerService.findById(ownerId));
+            //model.addAttribute("owner", ownerService.findById(ownerId));
+            //return "owners/ownerDetails";
+            return  mav;}catch(Exception e){
+            return handleNotFound(e);
+        }
+
     }
 
     @GetMapping("/new")
@@ -46,7 +63,7 @@ public class OwnerController {
     }
 
     @PostMapping("/new")
-    public String processCreationForm(@Validated Owner owner, BindingResult result){
+    public String processCreationForm(@Valid @ModelAttribute("owner") Owner owner, BindingResult result){
         if(result.hasErrors()){
             return "owners/createOrUpdateOwnerForm";
         }else{
@@ -108,4 +125,36 @@ public class OwnerController {
             return "owners/ownersList";
         }
     }
+
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    @ExceptionHandler(NotFoundException.class)
+    public ModelAndView handleNotFound(Exception exception){
+
+        log.error("Handling not found exception");
+        log.error(exception.getMessage());
+
+        ModelAndView modelAndView = new ModelAndView("404error");
+
+      //  modelAndView.setViewName("404error");
+        modelAndView.addObject("exception", exception);
+
+
+        return modelAndView;
+    }
+
+   /*@ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(NumberFormatException.class)
+    public ModelAndView handleNotRequest(Exception exception){
+
+        log.error("Handling number format exception");
+        log.error(exception.getMessage());
+
+        ModelAndView modelAndView = new ModelAndView("400error");
+
+        //  modelAndView.setViewName("404error");
+        modelAndView.addObject("exception", exception);
+
+
+        return modelAndView;
+    }*/
 }

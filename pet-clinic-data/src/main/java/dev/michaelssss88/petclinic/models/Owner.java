@@ -2,6 +2,9 @@ package dev.michaelssss88.petclinic.models;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 
 import java.util.HashSet;
@@ -19,12 +22,15 @@ public class Owner extends Person{
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private Set<Pet> pets=new HashSet<>();
 
+    @NotBlank
     @Column(name = "address")
     private String address;
 
+    @Size(min = 5)
     @Column(name = "city")
     private String city;
 
+    @NotBlank
     @Column(name = "telephone")
     private String telephone;
 

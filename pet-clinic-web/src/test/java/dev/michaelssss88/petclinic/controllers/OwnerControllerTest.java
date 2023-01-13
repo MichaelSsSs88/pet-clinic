@@ -1,5 +1,6 @@
 package dev.michaelssss88.petclinic.controllers;
 
+import dev.michaelssss88.petclinic.exceptions.NotFoundException;
 import dev.michaelssss88.petclinic.models.Owner;
 import dev.michaelssss88.petclinic.services.OwnerService;
 import org.junit.jupiter.api.BeforeEach;
@@ -60,11 +61,29 @@ class OwnerControllerTest {
 
     @Test
     void showOwner() throws Exception{
-        when(ownerService.findById(anyLong())).thenReturn(Owner.builder().city("quesada").build());
+        when(ownerService.findById(anyLong())).thenReturn(Owner.builder().id(5L).city("quesada").build());
         mockMvc.perform(get("/owners/123"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("owners/ownerDetails"))
                 .andExpect(model().attribute("owner", hasProperty("city", is("quesada"))));
 
     }
+
+    @Test
+    void NotFoundException() throws Exception{
+        when(ownerService.findById(anyLong())).thenThrow(NotFoundException.class);
+        mockMvc.perform(get("/owners/123"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("404error"));
+
+    }
+    /*@Test
+    void NotHandledException() throws Exception{
+       // when(ownerService.findById(anyLong())).thenThrow(NotFoundException.class);
+        mockMvc.perform(get("/owners/asass"))
+                .andExpect(status().isBadRequest())
+                .andExpect(view().name("400error"));
+
+    }*/
+
 }

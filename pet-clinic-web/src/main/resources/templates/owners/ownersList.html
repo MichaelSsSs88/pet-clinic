@@ -18,6 +18,7 @@
         </thead>
         <tbody>
           <tr th:each="owner : ${selections}">
+              <td th:text="${owner.id}"></td>
               <td>
                   <a th:href="@{/owners/__${owner.id}__}" th:text="${owner.firstName + ' ' + owner.lastName}"/></a>
               </td>

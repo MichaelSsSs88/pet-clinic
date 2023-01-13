@@ -30,8 +30,8 @@ class OwnerServiceMapTest {
     void setUp() {
         MockitoAnnotations.initMocks(this);
         ownerServiceMap= new OwnerServiceMap(petTypeService, petService);
-        ownerServiceMap.save(Owner.builder().build());
-        ownerServiceMap.save(Owner.builder().build());
+        ownerServiceMap.save(Owner.builder().lastName("Juemialma").build());
+        ownerServiceMap.save(Owner.builder().lastName("que duro").build());
     }
 
     @Test
@@ -73,8 +73,8 @@ class OwnerServiceMapTest {
 
     @Test
     void findByLastName() {
-        Owner owner = Owner.builder().build();
-        owner.setLastName("Solis");
+        Owner owner = Owner.builder().id(20L).firstName("Michael").lastName("Solis").city("quesada").telephone("29292203").build();
+       // owner.setLastName("Solis");
         ownerServiceMap.save(owner);
        assertEquals("Solis",ownerServiceMap.findByLastName("Solis").getLastName());
 

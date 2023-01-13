@@ -1,6 +1,7 @@
 package dev.michaelssss88.petclinic.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 @Getter
@@ -10,9 +11,11 @@ import lombok.*;
 @MappedSuperclass
 public class Person extends BaseEntity{
 
+    @NotBlank
     @Column(name = "first_name")
     private String firstName;
 
+    @NotBlank
     @Column(name = "last_name")
     private String lastName;
     public Person(Long id, String firstName, String lastName) {
