@@ -48,6 +48,6 @@ class VetControllerTest {
         //verify(model,times(1)).addAttribute(ArgumentMatchers.eq("vets"), anySet());
         verify(model,times(1)).addAttribute(ArgumentMatchers.eq("vets"), argumentCaptor.capture());
         Set<Vet> vetInController= argumentCaptor.getValue();
-        assertEquals(1,vetInController.size());
+        assertEquals(2,vetInController.size());
     }
 }
