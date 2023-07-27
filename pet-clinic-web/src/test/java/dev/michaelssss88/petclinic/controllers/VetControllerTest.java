@@ -43,7 +43,7 @@ class VetControllerTest {
         when(vetService.findAll()).thenReturn(vets);
         ArgumentCaptor<Set<Vet>> argumentCaptor= ArgumentCaptor.forClass(Set.class);
         String viewName=controller.index(model);
-        assertEquals("vets/index", viewName);
+        assertEquals("vets/indexr", viewName);
         verify(vetService, times(1)).findAll();
         //verify(model,times(1)).addAttribute(ArgumentMatchers.eq("vets"), anySet());
         verify(model,times(1)).addAttribute(ArgumentMatchers.eq("vets"), argumentCaptor.capture());
