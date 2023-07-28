@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>pet-clinic-web</artifactId>
-
+    <packaging>war</packaging>
     <properties>
         <webjars-bootstrap.version>5.2.3</webjars-bootstrap.version>
         <webjars-jquery-ui.version>1.13.1</webjars-jquery-ui.version>
@@ -85,6 +85,11 @@
             <artifactId>jakarta.jakartaee-web-api</artifactId>
             <version>9.1.0</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
     <build>

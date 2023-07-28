@@ -5,7 +5,7 @@ import dev.michaelssss88.petclinic.exceptions.NotFoundException;
 import dev.michaelssss88.petclinic.models.Owner;
 import dev.michaelssss88.petclinic.services.OwnerService;
 import jakarta.validation.Valid;
-import jakarta.ws.rs.InternalServerErrorException;
+//import jakarta.ws.rs.InternalServerErrorException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
