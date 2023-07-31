@@ -7,16 +7,7 @@ job('First-Maven-Project-Via-DSL') {
         scm('* * * * *')
     }
     steps {
-            maven {
-                goals('clean')
-                goals('verify')
-                goals('package')
-                mavenOpts('-Xms256m')
-                mavenOpts('-Xmx512m')
-                localRepository(LocalRepositoryLocation.LOCAL_TO_WORKSPACE)
-                mavenInstallation('Maven 3.9.3')
-                providedSettings('central-mirror')
-            }
+            mavenInstallation('Latest')
             maven('verify')
             maven('clean package', 'First-Maven-Project-Via-DSL/pom.xml')
             maven('clean package', 'First-Maven-Project-Via-DSL/pet-clinic-data/pom.xml')
