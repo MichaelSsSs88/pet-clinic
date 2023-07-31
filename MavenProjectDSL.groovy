@@ -8,20 +8,10 @@ job('First-Maven-Project-Via-DSL') {
     }
     steps {
         steps {
-            maven('verify')
-            maven('clean package', 'First-Maven-Project-Via-DSL/pom.xml')
-            maven('clean package', 'First-Maven-Project-Via-DSL/pet-clinic-data/pom.xml')
-            maven('clean package', 'First-Maven-Project-Via-DSL/pet-clinic-web/pom.xml' )
-            maven {
-                goals('clean')
-                goals('verify')
-                mavenOpts('-Xms256m')
-                mavenOpts('-Xmx512m')
-                localRepository(LocalRepositoryLocation.LOCAL_TO_WORKSPACE)
-                properties(skipTests: true)
-                mavenInstallation('Maven 3.9.3')
-                providedSettings('central-mirror')
-            }
+            LocalMaven('verify')
+            LocalMaven('clean package', 'First-Maven-Project-Via-DSL/pom.xml')
+            LocalMaven('clean package', 'First-Maven-Project-Via-DSL/pet-clinic-data/pom.xml')
+            LocalMaven('clean package', 'First-Maven-Project-Via-DSL/pet-clinic-web/pom.xml' )
         }
         publishers {
             archiveArtifacts '**/*.war,**/*.jar'
