@@ -8,7 +8,6 @@ job('First-Maven-Project-Via-DSL') {
     }
     steps {
             maven{
-                mavenInstallation('3.6.3')
                 maven('verify')
                 maven('clean package', '/var/lib/jenkins/workspace/First-Maven-Project-Via-DSL/pom.xml')
                 maven('clean package', '/var/lib/jenkins/workspace/First-Maven-Project-Via-DSL/pet-clinic-data/pom.xml')
