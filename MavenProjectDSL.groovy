@@ -7,8 +7,16 @@ job('First-Maven-Project-Via-DSL') {
         scm('* * * * *')
     }
     steps {
-        steps {
-            mavenInstallation 'Latest'
+            maven {
+                goals('clean')
+                goals('verify')
+                goals('package')
+                mavenOpts('-Xms256m')
+                mavenOpts('-Xmx512m')
+                localRepository(LocalRepositoryLocation.LOCAL_TO_WORKSPACE)
+                mavenInstallation('Maven 3.9.3')
+                providedSettings('central-mirror')
+            }
             maven('verify')
             maven('clean package', 'First-Maven-Project-Via-DSL/pom.xml')
             maven('clean package', 'First-Maven-Project-Via-DSL/pet-clinic-data/pom.xml')
@@ -17,5 +25,4 @@ job('First-Maven-Project-Via-DSL') {
         publishers {
             archiveArtifacts '**/*.war,**/*.jar'
         }
-    }
 }
