@@ -8,7 +8,7 @@ job('First-Maven-Project-Via-DSL') {
     }
     steps {
             maven{
-                mavenInstallation('3.9.3')
+                mavenInstallation('3.6.3')
                 maven('verify')
                 maven('clean package', 'First-Maven-Project-Via-DSL/pom.xml')
                 maven('clean package', 'First-Maven-Project-Via-DSL/pet-clinic-data/pom.xml')
