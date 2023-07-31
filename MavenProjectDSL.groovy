@@ -8,10 +8,11 @@ job('First-Maven-Project-Via-DSL') {
     }
     steps {
         steps {
-            LocalMaven('verify')
-            LocalMaven('clean package', 'First-Maven-Project-Via-DSL/pom.xml')
-            LocalMaven('clean package', 'First-Maven-Project-Via-DSL/pet-clinic-data/pom.xml')
-            LocalMaven('clean package', 'First-Maven-Project-Via-DSL/pet-clinic-web/pom.xml' )
+            mavenInstallation 'Latest'
+            maven('verify')
+            maven('clean package', 'First-Maven-Project-Via-DSL/pom.xml')
+            maven('clean package', 'First-Maven-Project-Via-DSL/pet-clinic-data/pom.xml')
+            maven('clean package', 'First-Maven-Project-Via-DSL/pet-clinic-web/pom.xml' )
         }
         publishers {
             archiveArtifacts '**/*.war,**/*.jar'
