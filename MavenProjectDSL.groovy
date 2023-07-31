@@ -7,12 +7,10 @@ job('First-Maven-Project-Via-DSL') {
         scm('* * * * *')
     }
     steps {
-            maven{
-                maven('verify')
-                maven('clean package', '/var/lib/jenkins/workspace/First-Maven-Project-Via-DSL/pom.xml')
-                maven('clean package', '/var/lib/jenkins/workspace/First-Maven-Project-Via-DSL/pet-clinic-data/pom.xml')
-                maven('clean package', '/var/lib/jenkins/workspace/First-Maven-Project-Via-DSL/pet-clinic-web/pom.xml' )
-            }
+        maven('verify')
+        maven('clean package', '/var/lib/jenkins/workspace/First-Maven-Project-Via-DSL/pom.xml')
+        maven('clean package', '/var/lib/jenkins/workspace/First-Maven-Project-Via-DSL/pet-clinic-data/pom.xml')
+        maven('clean package', '/var/lib/jenkins/workspace/First-Maven-Project-Via-DSL/pet-clinic-web/pom.xml' )
 
         }
         publishers {
