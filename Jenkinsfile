@@ -15,7 +15,6 @@ pipeline {
             }
             stage('Deploy on staging area') {
                               build job: 'PestAppDeployment'
-                              echo "Ready deployment..."
                         }
             /*stage('Deploy') {
                   steps {
