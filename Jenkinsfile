@@ -19,6 +19,12 @@ pipeline {
                   }
 
                         }
+            stage('Deploy on prod area') {
+                              steps{
+                                    build job: 'Pipeline Deployment Environment'
+                              }
+
+                                    }
             /*stage('Deploy') {
                   steps {
                         echo "Deploying in Staging Area"
