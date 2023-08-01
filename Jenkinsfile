@@ -13,6 +13,10 @@ pipeline {
                       }
                   }
             }
+            stage('Deploy on staging area') {
+                              build job: 'PipeLine Test Environment'
+
+                        }
             /*stage('Deploy') {
                   steps {
                         echo "Deploying in Staging Area"
