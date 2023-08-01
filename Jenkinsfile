@@ -14,7 +14,7 @@ pipeline {
                   }
             }
             stage('Deploy on staging area') {
-                              build job: 'PetsAppDeployment'
+                              build job: 'PestAppDeployment'
 
                         }
             /*stage('Deploy') {
