@@ -15,7 +15,7 @@ pipeline {
             }
             stage('Deploy on staging area') {
                   steps{
-                        build job: 'PestAppDeployment'
+                        build job: 'PipeLine Test Environment'
                   }
 
                         }
