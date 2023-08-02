@@ -13,31 +13,28 @@ pipeline {
                       }
                   }
             }
-            stage('Deploy on staging area') {
-                  steps{
-                        build job: 'PipeLine Test Environment'
-                  }
-
-                        }
-            stage('Deploy on prod area') {
+            stage('Create tomcat docker image') {
                               steps{
-
-                                    timeout(time:5, unit:'DAYS'){
-                                        input message: 'Approve PRODUCTION Deployment?'
-                                    }
-                                    build job: 'Pipeline Deployment Environment'
+                                    sh 'docker build -f ./Dockerfile -t tomcawebapp:${env.BUILD_ID}'
                               }
 
                                     }
-            /*stage('Deploy') {
-                  steps {
-                        echo "Deploying in Staging Area"
-                  }
-            }
-            stage('Deploy Production') {
-                  steps {
-                        echo "Deploying in Production Area"
-                  }
-            }*/
+//             stage('Deploy on staging area') {
+//                   steps{
+//                         build job: 'PipeLine Test Environment'
+//                   }
+//
+//                         }
+//             stage('Deploy on prod area') {
+//                               steps{
+//
+//                                     timeout(time:5, unit:'DAYS'){
+//                                         input message: 'Approve PRODUCTION Deployment?'
+//                                     }
+//                                     build job: 'Pipeline Deployment Environment'
+//                               }
+//
+//                                     }
+
       }
 }
