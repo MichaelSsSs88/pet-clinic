@@ -21,7 +21,7 @@ pipeline {
                                     }
              stage('Cleaning docker') {
                                                                   steps{
-                                                                         sh "docker rm -f $(docker ps -q)"
+                                                                         sh 'docker rm -f $(docker ps -q)''
                                                                   }
 
                                                                         }
