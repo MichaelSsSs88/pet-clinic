@@ -41,11 +41,12 @@ pipeline {
       }
 
 
-      //       post{
-      //             success{
-      //                         echo "Post step: Running docker file"
-      //                         sh "docker run -d -p 8090:8080 tomcatwebapp:${env.BUILD_ID}"
-      //             }
-      //
-      //       }
+            post{
+                  success{
+                              echo "Post step: Running docker file"
+                              sh "docker run -d -p 8090:8080 --name tomcatwebapp tomcatwebapp:latest"
+                              //sh "docker run -d -p 8090:8080 tomcatwebapp:${env.BUILD_ID}"
+                  }
+
+            }
 }
