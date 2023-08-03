@@ -15,16 +15,12 @@ pipeline {
             }
             stage('Create tomcat docker image') {
                               steps{
-                                    sh "docker build . -t tomcatwebapp:${env.BUILD_ID}"
+                                    sh "docker rm -f tomcatwebapp"
+                                    sh "docker rmi -f tomcatwebapp"
+                                    sh "docker build . -t tomcatwebapp"
                               }
 
                                     }
-             stage('Cleaning docker') {
-                                                                  steps{
-                                                                         sh 'docker rm -f $(docker ps -q)''
-                                                                  }
-
-                                                                        }
 //             stage('Deploy on staging area') {
 //                   steps{
 //                         build job: 'PipeLine Test Environment'
