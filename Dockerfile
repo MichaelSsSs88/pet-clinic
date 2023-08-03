@@ -20,7 +20,7 @@ RUN cp -Rv /tmp/apache-tomcat-${TOMCAT_VERSION}/* $CATALINA_HOME
 RUN rm -rf /tmp/apache-tomcat-${TOMCAT_VERSION}
 RUN rm -rf /tmp/tomcat.tar.gz
 
-ADD pet-clinic-web/target/*.war /usr/local/tomcat/webapps
+ADD pet-clinic-web/target/*.jar /usr/local/tomcat/webapps
 ADD pet-clinic-data/target/*.jar /usr/local/tomcat/webapps
 
 RUN java -jar /usr/local/tomcat/webapps/pet-clinic-web-0.0.1-SNAPSHOT.jar
