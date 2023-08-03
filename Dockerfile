@@ -22,8 +22,10 @@ RUN rm -rf /tmp/tomcat.tar.gz
 
 ADD pet-clinic-web/target/*.war /usr/local/tomcat/webapps
 ADD pet-clinic-data/target/*.jar /usr/local/tomcat/webapps
+
+RUN java -jar /usr/local/tomcat/webapps/pet-clinic-web-0.0.1-SNAPSHOT.jar
 # Expose Tomcat port.
 EXPOSE 8080
 
 # Start Tomcat
-CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
+#CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
