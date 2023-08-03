@@ -19,6 +19,12 @@ pipeline {
                               }
 
                                     }
+             stage('Cleaning docker') {
+                                                                  steps{
+                                                                         sh "docker rm -f $(docker ps -q)"
+                                                                  }
+
+                                                                        }
 //             stage('Deploy on staging area') {
 //                   steps{
 //                         build job: 'PipeLine Test Environment'
@@ -37,4 +43,13 @@ pipeline {
 //                                     }
 
       }
+
+
+      //       post{
+      //             success{
+      //                         echo "Post step: Running docker file"
+      //                         sh "docker run -d -p 8090:8080 tomcatwebapp:${env.BUILD_ID}"
+      //             }
+      //
+      //       }
 }
