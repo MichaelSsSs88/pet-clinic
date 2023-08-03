@@ -15,8 +15,14 @@ pipeline {
             }
             stage('Create tomcat docker image') {
                               steps{
-                                    sh "docker build . -t tomcatwebapp:${env.BUILD_ID}"
-                                    sh "docker rm -f $(docker ps -q)"
+                                    step{
+                                     sh "docker build . -t tomcatwebapp:${env.BUILD_ID}"
+                                    }
+                                    step{
+                                        sh "docker rm -f $(docker ps -q)"
+                                    }
+
+
                               }
 
                                     }
@@ -39,7 +45,10 @@ pipeline {
 
       }
       post{
-            echo "Post step: Running docker file"
-            sh "docker run -d -p 8090:8080 tomcatwebapp:${env.BUILD_ID}"
+            success{
+                        echo "Post step: Running docker file"
+                        sh "docker run -d -p 8090:8080 tomcatwebapp:${env.BUILD_ID}"
+            }
+
       }
 }
