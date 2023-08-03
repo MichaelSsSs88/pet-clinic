@@ -29,4 +29,4 @@ EXPOSE 8080
 
 # Start Tomcat
 #CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
-CMD ["java -jar /usr/local/tomcat/webapps/pet-clinic-web-0.0.1-SNAPSHOT.jar", "run"]
+CMD ["java","-jar","/usr/local/tomcat/webapps/pet-clinic-web-0.0.1-SNAPSHOT.jar"]
